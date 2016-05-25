@@ -18,6 +18,9 @@ filtering_vcf_based_on_depth_and_completenes.pl -l <int> -h <int> file.vcf
 
 Options: -l <int> : minimum depth of coverage.
          -m <int> : maximumdepth of coverage.
+
+EXAMPLE:
+./filtering_vcf_based_on_depth_and_completenes.pl -l 20 -h 45 srw_4s_3na_1np_contig0_only.vcf > srw_4s_3na_1np_contig0_only_filtered_l20_h45.vcf
 \n\n";
 
 my $FILE = $ARGV[0];
