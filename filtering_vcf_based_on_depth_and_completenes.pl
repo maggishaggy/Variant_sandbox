@@ -17,7 +17,7 @@ USAGE:
 filtering_vcf_based_on_depth_and_completenes.pl -l <int> -h <int> file.vcf
 
 Options: -l <int> : minimum depth of coverage.
-         -h <int> : maximumdepth of coverage.
+         -h <int> : maximum depth of coverage.
 
 EXAMPLE:
 ./filtering_vcf_based_on_depth_and_completenes.pl -l 20 -h 45 srw_4s_3na_1np_contig0_only.vcf > srw_4s_3na_1np_contig0_only_filtered_l20_h45.vcf
@@ -112,7 +112,10 @@ sub parse{
                     }
 		}
 	    } 
-	    if ($number_passed == 8){
+	    #if ($number_passed == 8){ 
+            #this was a hard coded sample number that is more usefull as a variable 
+
+	    if ($number_passed == $num_samples){
 		#all of the samples passed the depth cutoffs
 		print $line, "\n";
 	    }
