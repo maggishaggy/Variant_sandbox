@@ -61,6 +61,8 @@ sub parse{
 	}
 	
 	else{
+	    #check to make sure that the header is present
+	    die "The header apears to be malformed make sure the #CHROM line is present\n" if $num_samples == 0;
 	    #it has to be a data line so parse it
 	    my @cols = split(/\t/, $line);
 	    my @format = split(/:/, $cols[8]);
